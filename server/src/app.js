@@ -9,9 +9,9 @@ app.use(morgan('combined')); // for logging
 app.use(bodyParser.json()); // for better parsing
 app.use(cors());//any client hit our server from any part of the world, security issue when used
 
-app.get('/status', (req, res) => {
+app.post('/register', (req, res) => {
     res.send({
-        message: 'Hello world!'
+        message: `Hello ${req.body.email}! Your user was registered! Have fun!`
     })
 });
 
